@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101114">
+    <title>Mortech | Home Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-mark">M</div>
+        <div>
+            <h1>MORTECH</h1>
+            <p>HOME MONITOR</p>
+        </div>
+    </div>
+    <div class="system-label">
+        <span class="live-dot"></span>
+        IoT CONTROL CENTER
+    </div>
+</header>
+
+<main>
+    <section class="welcome">
+        <div>
+            <p class="eyebrow">SMART HOME SYSTEM</p>
+            <h2>Home Overview</h2>
+            <p class="subtitle">
+                Monitor your home. Stay in control.
+            </p>
+        </div>
+        <div class="version">VERSION 1.0</div>
+    </section>
+
+    <!-- DEVICE STATUS -->
+    <section class="device-panel">
+        <div class="device-icon">⌂</div>
+        <div class="device-info">
+            <span class="panel-label">CONNECTED DEVICE</span>
+            <h3 id="deviceName">Loading...</h3>
+            <p>Last heartbeat: <strong id="heartbeat">Loading...</strong></p>
+        </div>
+        <div class="connection">
+            <span class="connection-dot"></span>
+            <strong id="onlineStatus">Loading...</strong>
+        </div>
+    </section>
+
+    <!-- SENSOR GRID -->
+    <section class="dashboard-grid">
+
+        <!-- WATER TANK -->
+        <article class="card water-card">
+            <div class="card-heading">
+                <div>
+                    <span class="panel-label">WATER MANAGEMENT</span>
+                    <h3>Water Tank</h3>
+                </div>
+                <div class="card-icon water-icon">≈</div>
+            </div>
+
+            <div class="water-display">
+                <div class="water-number">
+                    <span id="waterPercentage">--</span><small>%</small>
+                </div>
+                <span class="water-caption">Tank level</span>
+            </div>
+
+            <div class="tank-track">
+                <div class="tank-fill" id="waterFill"></div>
+            </div>
+
+            <div class="card-bottom">
+                <span>Sensor distance</span>
+                <strong><span id="waterDistance">--</span> cm</strong>
+            </div>
+        </article>
+
+        <!-- MOTION -->
+        <article class="card">
+            <div class="card-heading">
+                <div>
+                    <span class="panel-label">SECURITY SYSTEM</span>
+                    <h3>Motion Detection</h3>
+                </div>
+                <div class="card-icon security-icon">⌁</div>
+            </div>
+
+            <div class="motion-display">
+                <div class="motion-indicator" id="motionIndicator"></div>
+                <div>
+                    <div id="motionStatus" class="status">--</div>
+                    <p class="muted">PIR motion sensor</p>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <span>Monitoring</span>
+                <strong>Active</strong>
+            </div>
+        </article>
+
+        <!-- RELAY -->
+        <article class="card relay-card">
+            <div class="card-heading">
+                <div>
+                    <span class="panel-label">DEVICE AUTOMATION</span>
+                    <h3>Relay Control</h3>
+                </div>
+                <div class="card-icon relay-icon">⚡</div>
+            </div>
+
+            <div class="relay-display">
+                <span class="relay-indicator" id="relayIndicator"></span>
+                <div>
+                    <span class="muted">Current state</span>
+                    <div id="relayStatus" class="relay-state">--</div>
+                </div>
+            </div>
+
+            <div class="relay-buttons">
+                <button id="relayOn" class="btn btn-on"
+                    onclick="setRelay(true)">
+                    TURN ON
+                </button>
+                <button id="relayOff" class="btn btn-off"
+                    onclick="setRelay(false)">
+                    TURN OFF
+                </button>
+            </div>
+            <p class="control-note">Remote relay control</p>
+        </article>
+
+    </section>
+
+    <section class="system-note">
+        <div class="note-icon">i</div>
+        <p>
+            Sensor readings and device status are supplied by
+            your Mortech ESP32 monitoring system.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <strong>MORTECH ENGINEERING</strong>
+    <span>Smart Systems • IoT • Automation</span>
+    <span>Home Monitor V1.0</span>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
